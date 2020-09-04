@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet, Animated } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
@@ -7,23 +7,23 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 
-    content:{
+    content: {
         flex: 1,
         maxHeight: 400,
         zIndex: 5,
     },
 
-    card:{
+    card: {
         flex: 1,
         backgroundColor: "#fff",
         borderRadius: 4,
         marginHorizontal: 20,
         height: '100%',
-        position: "absolute",
+        position: 'absolute',
         left: 0,
         right: 0,
         top: 0,
-    }, 
+    },
 
     cardHeader: {
         flexDirection: 'row',
@@ -32,13 +32,13 @@ const styles = StyleSheet.create({
         padding: 30,
     },
 
-    cardFooter:{
+    cardFooter: {
         padding: 30,
         backgroundColor: '#eee',
         borderRadius: 4,
     },
 
-    cardContent:{
+    cardContent: {
         flex: 1,
         paddingHorizontal: 30,
         justifyContent: 'center',
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         color: "#999"
     },
 
-    description:{
+    description: {
         fontSize: 32,
         marginTop: 3,
         color: "#333"

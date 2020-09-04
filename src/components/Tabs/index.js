@@ -1,14 +1,30 @@
 import React from 'react';
-import { View, ScrollView, Text } from 'react-native';
+import { View, ScrollView, Text, Animated } from 'react-native';
 import styles from './styles';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-export default function Header(){
+export default function Header({ translateY }) {
     return (
-        <View style={styles.container}>
-            <ScrollView 
-                contentContainerStyle={{paddingLeft: 10, paddingRight: 20}}
+        <Animated.View style={[
+            styles.container,
+            {
+                opacity: translateY.interpolate({
+                    inputRange: [0, 380],
+                    outputRange: [1, 0.3],
+                    extrapolate: 'clamp',
+                }),
+                transform: [{
+                    translateY: translateY.interpolate({
+                        inputRange: [0, 380],
+                        outputRange: [0, 30],
+                        extrapolate: 'clamp',
+                    }),
+                }]
+            }
+        ]}>
+            <ScrollView
+                contentContainerStyle={{ paddingLeft: 10, paddingRight: 20 }}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
             >
@@ -33,6 +49,6 @@ export default function Header(){
                     <Text style={styles.tabText}>Bloquear cartão</Text>
                 </View>
             </ScrollView>
-        </View>
+        </Animated.View>
     )
 }
